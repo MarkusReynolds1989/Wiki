@@ -17,19 +17,22 @@ namespace InternalWiki
            
         public void OnPost()
         {
+            //Takes all the users input and builds a page from it.
             var tags = new StringBuilder();
             foreach(var item in Article.Tags)
             {
-                tags.Append(item);
+                tags.Append(item + ",");
             }
             var saveString =
                 "@page \n@{ViewData[\"Title\"] =" +
                 $"\"{Article.Title}\";" + 
-                "}" +
-                $@"<h1> {Article.Title} </h1>" +
-                $@"<p> {Article.Content} </p>";
+                "}\n" +
+                $@"<h1> {Article.Title} </h1>" + "\n" +
+                $@"<p> {Article.Content} </p>" + "\n" +
+                $@"<p> {tags} </p>" + "\n";
             var path = $"Pages/{Article.Title}.cshtml";
             System.IO.File.WriteAllText(path, saveString);
+            //AddLink
         }
         public void OnGet()
         {
