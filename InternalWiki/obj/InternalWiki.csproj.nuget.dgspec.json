@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MR071411\\desktop\\funcode\\csharp\\wiki\\InternalWiki\\internalwiki\\InternalWiki.csproj": {}
+    "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MR071411\\desktop\\funcode\\csharp\\wiki\\InternalWiki\\internalwiki\\InternalWiki.csproj": {
+    "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MR071411\\desktop\\funcode\\csharp\\wiki\\InternalWiki\\internalwiki\\InternalWiki.csproj",
+        "projectUniqueName": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj",
         "projectName": "InternalWiki",
-        "projectPath": "C:\\Users\\MR071411\\desktop\\funcode\\csharp\\wiki\\InternalWiki\\internalwiki\\InternalWiki.csproj",
+        "projectPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj",
         "packagesPath": "C:\\Users\\MR071411\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MR071411\\desktop\\funcode\\csharp\\wiki\\InternalWiki\\internalwiki\\obj\\",
+        "outputPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
