@@ -1,25 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/home/mars/Documents/Code/C#/Wiki/InternalWiki/InternalWiki.csproj": {}
+    "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj": {}
   },
   "projects": {
-    "/home/mars/Documents/Code/C#/Wiki/InternalWiki/InternalWiki.csproj": {
+    "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mars/Documents/Code/C#/Wiki/InternalWiki/InternalWiki.csproj",
+        "projectUniqueName": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj",
         "projectName": "InternalWiki",
-        "projectPath": "/home/mars/Documents/Code/C#/Wiki/InternalWiki/InternalWiki.csproj",
-        "packagesPath": "/home/mars/.nuget/packages/",
-        "outputPath": "/home/mars/Documents/Code/C#/Wiki/InternalWiki/obj/",
+        "projectPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj",
+        "packagesPath": "C:\\Users\\MR071411\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/mars/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\MR071411\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\MR071411\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

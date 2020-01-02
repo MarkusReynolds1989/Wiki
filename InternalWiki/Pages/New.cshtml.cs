@@ -13,30 +13,34 @@ namespace InternalWiki
     public class NewModel : PageModel
     {
         [BindProperty]
-        public Article Article { get; set; } 
-           
+        public Article Article { get; set; }
+
         public void OnPost()
         {
             //Takes all the users input and builds a page from it.
             var tags = new StringBuilder();
-            foreach(var item in Article.Tags)
+            foreach (var item in Article.Tags)
             {
                 tags.Append(item + ",");
             }
             var saveString =
-                "@page \n@{ViewData[\"Title\"] =" +
-                $"\"{Article.Title}\";" + 
-                "}\n" +
-                $@"<h1> {Article.Title} </h1>" + "\n" +
-                $@"<p> {Article.Content} </p>" + "\n" +
-                $@"<p> {tags} </p>" + "\n";
+                "@page \n@{ViewData[\"Title\"] ="
+                + $"\"{Article.Title}\";"
+                + "}\n"
+                + $"<div id = \"title\"> <h1> {Article.Title} </h1> </div>"
+                + "\n"
+                + $"<div id = \"content\"> {Article.Content} </div>"
+                + "\n"
+                + "\n"
+                + "<button class = \"btn-secondary\"> Modify </button>"
+                + "<button class = \"btn-danger\"> Delete </button>"
+                + $"<div id = \"tags\"> {tags} </div>" ;
             var path = $"Pages/{Article.Title}.cshtml";
             System.IO.File.WriteAllText(path, saveString);
             //AddLink
         }
         public void OnGet()
         {
-
         }
     }
 }
