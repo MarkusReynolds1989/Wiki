@@ -19,24 +19,24 @@ namespace InternalWiki
         {
             //Takes all the users input and builds a page from it.
             var tags = new StringBuilder();
-            foreach (var item in Article.Tags)
+            var saveString = new StringBuilder();
+            for(int i = 0; i < Article.Tags.Count(); i++)
             {
-                tags.Append(item + ",");
+                tags.Append(Article.Tags[i] + ",");
             }
-            var saveString =
-                "@page \n@{ViewData[\"Title\"] ="
-                + $"\"{Article.Title}\";"
-                + "}\n"
-                + $"<div id = \"title\"> <h1> {Article.Title} </h1> </div>"
-                + "\n"
-                + $"<div id = \"content\"> {Article.Content} </div>"
-                + "\n"
-                + "\n"
-                + "<button class = \"btn-secondary\"> Modify </button>"
-                + "<button class = \"btn-danger\"> Delete </button>"
-                + $"<div id = \"tags\"> {tags} </div>" ;
+            saveString
+                .Append("@page \n@{ViewData[\"Title\"] =")
+                .Append($"\"{Article.Title}\";")
+                .Append("}\n")
+                .Append($"<div id = \"title\"> <h1> {Article.Title} </h1> </div>")
+                .Append("\n")
+                .Append($"<div id = \"content\"> {Article.Content} </div>")
+                .Append("\n")
+                .Append("\n")
+                .Append("<button class = \"btn-secondary\"> Modify </button>")
+                .Append($"<div id = \"tags\"> {tags} </div>");
             var path = $"Pages/{Article.Title}.cshtml";
-            System.IO.File.WriteAllText(path, saveString);
+            System.IO.File.WriteAllText(path, saveString.ToString());
             //AddLink
         }
         public void OnGet()

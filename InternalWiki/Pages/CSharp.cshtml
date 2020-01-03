@@ -1,11 +1,12 @@
 @page
 
 @{ViewData["Title"] = "CSharp";}
-<div id="title"> <h1> C# </h1> </div>
-<div id="content">
-    <h2> Intro </h2>
-    <p>C# is a great language. It is like a Swiss army knife that can be used to solve any number of problems. It's an object oriented language but it isn't too obnoxious about it. You can barely think about that and focus more on creating the solution and then compress that into your classes later. It also contains many useful and powerful generic data structures. </p>
-    <p> If you'd like, it also has several options to code in a more functional style, as well as options to keep data immutable. </p>
+<form method="post">
+    <div id="title"> <h1> C# </h1> </div>
+    <div id="content">
+        <h2> Intro </h2>
+        <p>C# is a great language. It is like a Swiss army knife that can be used to solve any number of problems. It's an object oriented language but it isn't too obnoxious about it. You can barely think about that and focus more on creating the solution and then compress that into your classes later. It also contains many useful and powerful generic data structures. </p>
+        <p> If you'd like, it also has several options to code in a more functional style, as well as options to keep data immutable. </p>
 <pre>
 <code>
 #using System;
@@ -16,10 +17,13 @@ int main(string[] args)
 }
 </code>
 </pre>
-    <p> An example of hello world in C# </p>
-</div>
+        <p> An example of hello world in C# </p>
+    </div>
 
-<button class="btn-secondary"> Modify </button>
-<!-- Trigger a post to delete the page.-->
-<button class="btn-danger" onclick=""> Delete </button>
-<div id="tags"> C# Dotnet .net, </div>
+    <button type="submit"
+            class="btn-secondary">
+        Modify
+    </button>
+    <div id="tags"> C# Dotnet .net, </div>
+</form>
+
