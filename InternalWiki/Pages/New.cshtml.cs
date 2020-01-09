@@ -17,30 +17,15 @@ namespace InternalWiki
 
         public void OnPost()
         {
-            //Takes all the users input and builds a page from it.
-            var tags = new StringBuilder();
-            var saveString = new StringBuilder();
-            for(int i = 0; i < Article.Tags.Count(); i++)
-            {
-                tags.Append(Article.Tags[i] + ",");
-            }
-            saveString
-                .Append("@page \n@{ViewData[\"Title\"] =")
-                .Append($"\"{Article.Title}\";")
-                .Append("}\n")
-                .Append($"<div id = \"title\"> <h1> {Article.Title} </h1> </div>")
-                .Append("\n")
-                .Append($"<div id = \"content\"> {Article.Content} </div>")
-                .Append("\n")
-                .Append("\n")
-                .Append("<button class = \"btn-secondary\"> Modify </button>")
-                .Append($"<div id = \"tags\"> {tags} </div>");
+            var articleBuilder = new ArticleBuilder();
+            var saveString = articleBuilder.CreateArticle(Article);
             var path = $"Pages/{Article.Title}.cshtml";
+            var link = $"{Article.Title}";
+            var linkPath = $"Pages/links.txt";
             System.IO.File.WriteAllText(path, saveString.ToString());
-            //AddLink
+            System.IO.File.AppendAllText(linkPath, " " + link + " ");
+            //TODO: Add a link to the linkfile, it can be uploaded to that page dynamically.
         }
-        public void OnGet()
-        {
-        }
+
     }
 }
