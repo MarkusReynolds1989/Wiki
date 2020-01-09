@@ -27,10 +27,13 @@ namespace InternalWiki
              * 2. Take from list and add to html string
              * 3. Update page.
              */
-            var input = System.IO.File.ReadAllText(@"Pages/links.txt");
-            foreach(var item in input.Split(" "))
+            if (linkList.Count < 1)
             {
-                linkList.Add(item);
+                var input = System.IO.File.ReadAllText(@"Pages/links.txt");
+                foreach (var item in input.Split(" "))
+                {
+                    linkList.Add(item);
+                }
             }
         }
     }

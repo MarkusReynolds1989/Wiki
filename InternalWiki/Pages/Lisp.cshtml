@@ -1,11 +1,12 @@
-@page 
-@{ViewData["Title"] ="Lisp";}
-<div id = "title"> <h1> Lisp </h1> </div>
-<div id = "content"> <h2> Lisp is great </h2>
-<p> Lisp is the type of language that is easy to learn but difficult to master. It's also quite hard to learn as a third or fourth language. It never become very popular but it inspired most of the high level languages we use today. </p>
-<p> Most popular languages marry C's syntax with Lisp's garbage collection, lambda functions, and list manipulation. Lynq in C# is example of such an implementation, as well as anonymous function abilities it's picked up over the years. </p>
-<p> One of the great things about lisp is that things that get parsed in the language are also data types called symbols. That means it's very easy to write a compiler in it as it naturally can read itself quite well </p>
-<p> I could write a hello-world example here but that would be quite boring, instead I'd like to write a simple function that adds 1 to a list of items </p>
+@page
+
+@{ViewData["Title"] = "Lisp";}
+<div id="title"> <h1> Lisp </h1> </div>
+<div id="content">
+    <p> Lisp is the type of language that is easy to learn but difficult to master. It's also quite hard to learn as a third or fourth language. It never become very popular but it inspired most of the high level languages we use today. </p>
+    <p> Most popular languages marry C's syntax with Lisp's garbage collection, lambda functions, and list manipulation. Lynq in C# is example of such an implementation, as well as anonymous function abilities it's picked up over the years. </p>
+    <p> One of the great things about lisp is that things that get parsed in the language are also data types called symbols. That means it's very easy to write a compiler in it as it naturally can read itself quite well </p>
+    <p> I could write a hello-world example here but that would be quite boring, instead I'd like to write a simple function that adds 1 to a list of items </p>
 <pre>
 <code>
 (setf items '(1 2 3 4))
@@ -15,7 +16,8 @@
 (2 3 4 5)
 </code>
 </pre>
-<p> You can actually open up a terminal, throw that info in there, and then watch it run through compilers like SBCL. Lisp, like Python, can run dynamically but it can also be compiled down to machine code. </p>
-<p> One further comment I'd like to make is that Lisp also has powerful meta-programming capacities called "macros" these tools can allow you to write code that writes code. </p> </div>
+    <p> You can actually open up a terminal, throw that info in there, and then watch it run through compilers like SBCL. Lisp, like Python, can run dynamically but it can also be compiled down to machine code. </p>
+    <p> One further comment I'd like to make is that Lisp also has powerful meta-programming capacities called "macros" these tools can allow you to write code that writes code. </p>
+</div>
 
-<button class = "btn-secondary"> Modify </button><div id = "tags"> Lisp Functional, </div>
+<button class="btn-secondary"> Modify </button><div id="tags"> Lisp Functional, </div>
