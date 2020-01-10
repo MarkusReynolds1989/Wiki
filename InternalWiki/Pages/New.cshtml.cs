@@ -17,6 +17,7 @@ namespace InternalWiki
 
         public void OnPost()
         {
+            //Creates a new article, saves it to local storage.
             var articleBuilder = new ArticleBuilder();
             var saveString = articleBuilder.CreateArticle(Article);
             var path = $"Pages/{Article.Title}.cshtml";
@@ -24,7 +25,6 @@ namespace InternalWiki
             var linkPath = $"Pages/links.txt";
             System.IO.File.WriteAllText(path, saveString.ToString());
             System.IO.File.AppendAllText(linkPath, " " + link + " ");
-            //TODO: Add a link to the linkfile, it can be uploaded to that page dynamically.
         }
 
     }

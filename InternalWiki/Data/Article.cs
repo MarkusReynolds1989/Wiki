@@ -34,7 +34,7 @@ namespace InternalWiki.Data
                 .Append($"<div id = \"content\"> {article.Content} </div>")
                 .Append("\n")
                 .Append("\n")
-                .Append("<button class = \"btn-secondary\"> Modify </button>")
+                .Append("</br> <button class = \"btn btn-secondary\"> Modify </button>")
                 .Append($"<div id = \"tags\"> {tagBuilder} </div>");
             return articleString.ToString();
         }
