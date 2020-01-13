@@ -30,7 +30,7 @@ namespace InternalWiki
             if (linkList.Count < 1)
             {
                 var input = System.IO.File.ReadAllText(@"Pages/links.txt");
-                foreach (var item in input.Split(" "))
+                foreach (var item in input.Split(" ",StringSplitOptions.RemoveEmptyEntries))
                 {
                     linkList.Add(item);
                 }

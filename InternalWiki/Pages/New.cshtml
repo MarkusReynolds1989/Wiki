@@ -22,16 +22,6 @@
                         onclick="insertItalic()">
                     <i> I </i>
                 </button>
-                <button type="button" class="btn btn-outline-dark"
-                        name="size"
-                        onclick="increaseSize()">
-                    +
-                </button>
-                <button type="button" class="btn btn-outline-dark"
-                        name="size"
-                        onclick="decreaseSize()">
-                    -
-                </button>
                 <button 
                     type="button" 
                     class="btn btn-outline-dark"
@@ -55,7 +45,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
 <script>
     function insertBold() {
         document.getElementById("content").value += "<b></b>";
@@ -63,13 +52,7 @@
     function insertItalic() {
         document.getElementById("content").value += "<i></i>";
     }
-    function increaseSize() {
-        document.getElementById("content").style.fontSize += 2 + 'px';
-    }
-    function decreaseSize() {
-        document.getElementById("content").style.fontSize -= 2 + 'px';
-    }
     function insertCode() {
-        document.getElementById("content").value += "<pre>\n<code>\n</code>\n</pre>";
+        document.getElementById("content").value += "<pre>\n<code>\n</code>\n</pre>\n";
     }
 </script>
