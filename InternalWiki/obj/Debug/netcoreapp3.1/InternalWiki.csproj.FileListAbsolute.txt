@@ -195,7 +195,6 @@ C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\bin\Debu
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\staticwebassets\InternalWiki.StaticWebAssets.Manifest.cache
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\staticwebassets\InternalWiki.StaticWebAssets.xml
-C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\InternalWiki.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\InternalWiki.RazorAssemblyInfo.cache
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\InternalWiki.RazorAssemblyInfo.cs
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\InternalWiki.AssemblyInfoInputs.cache
@@ -223,5 +222,4 @@ C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debu
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\Razor\Pages\Lisp.cshtml.g.cs
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\InternalWiki.RazorComponent.input.cache
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Shared\_Imports.razor.g.cs
-C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\RazorDeclaration\InternalWiki.dll
-C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Imports.razor.g.cs
+C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Shared\_Layout.cshtml.razor.g.cs
