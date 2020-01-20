@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using InternalWiki.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using InternalWiki.Data;
-using System.IO;
-using System.Text;
 
-namespace InternalWiki
+namespace InternalWiki.Pages
 {
     public class NewModel : PageModel
     {
-        [BindProperty]
-        public Article Article { get; set; }
+        [BindProperty] public Article Article { get; set; }
 
         public void OnPost()
         {
@@ -23,9 +17,9 @@ namespace InternalWiki
             var path = $"Pages/{Article.Title}.cshtml";
             var link = $"{Article.Title}";
             var linkPath = $"Pages/links.txt";
-            System.IO.File.WriteAllText(path, saveString.ToString());
-            System.IO.File.AppendAllText(linkPath, " " + link + " ");
+            void WriteToPath() => System.IO.File.WriteAllText(path, saveString);
+            void WriteToLink() => System.IO.File.AppendAllText(linkPath, " " + link + " ");
+            Parallel.Invoke(WriteToLink,WriteToPath);
         }
-
     }
 }
