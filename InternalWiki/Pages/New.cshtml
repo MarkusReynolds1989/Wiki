@@ -1,5 +1,5 @@
 ﻿@page
-@model InternalWiki.NewModel
+@model InternalWiki.Pages.NewModel
 @{
     ViewData["Title"] = "New";
 }
@@ -13,20 +13,20 @@
                 <button type="button"
                         class="btn btn-outline-dark"
                         name="bold"
-                        onclick="insertBold()">
+                        onclick="insertHTMLCode('b')">
                     <b> B </b>
                 </button>
                 <button type="button"
                         class="btn btn-outline-dark"
                         name="italic"
-                        onclick="insertItalic()">
+                        onclick="insertHTMLCode('i')">
                     <i> I </i>
                 </button>
                 <button 
                     type="button" 
                     class="btn btn-outline-dark"
                     name="code"
-                    onclick="insertCode()">
+                    onclick="insertHTMLCode('c')">
                     Code 
                 </button>
             </div>
@@ -46,13 +46,18 @@
     </form>
 </div>
 <script>
-    function insertBold() {
-        document.getElementById("content").value += "<b></b>";
-   } 
-    function insertItalic() {
-        document.getElementById("content").value += "<i></i>";
-    }
-    function insertCode() {
-        document.getElementById("content").value += "<pre>\n<code>\n</code>\n</pre>\n";
-    }
+    function insertHTMLCode(input) {
+        let content = document.getElementById("content");
+        switch(input) {
+            case 'i':
+                content.value += "<i></i>";
+                break;
+            case 'b':
+                content.value += "<b></b>";
+                break;
+            case 'c':
+                content.value += "\n<pre>\n<code>\n Insert snippet here\n</code>\n</pre>\n";
+                break;
+                }
+        }
 </script>

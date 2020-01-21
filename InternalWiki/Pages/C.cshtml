@@ -1,21 +1,45 @@
 @page
 
-@{ViewData["Title"] = "C";}
-<div id="title"> <h1> C </h1> </div>
+@{ ViewData["Title"] = "C"; }
+<div id="title">
+    <h1> C </h1>
+</div>
 <div id="content">
     <p> Here is the first page of some information about the C language. I can't guarantee this will expand out at all , but, for now this is just the beginning and we can always program a way to move everything to the right spot later. </p>
-<pre>
-<code class="language-c"> 
-#include &lt;stdio.h&gt;
-#include &lt;stdint.h&gt;
-int32_t main() {
-        printf("Hello, World!");
-        return 0;
-}
+    <pre>
+        <code class="language-c">
+             #include &lt;stdio.h&gt;
+             #include &lt;stdint.h&gt;
+             int32_t main() {
+                printf("Hello, World!");
+                return 0;
+            }
 </code>
 </pre>
     <p> A simple hello world program </p>
     <p> C is a great and simple language. It's lighting fast to compile, and allows you to do almost anything you want in it. That means it allows you to make as many mistakes as you want. I will write more about C in later pages. </p>
 </div>
-<button class="btn btn-secondary"> Modify </button>
+<div id="buttons">
+    <button class="btn btn-primary" onclick="Modify()"> Modify </button>
+</div>
 <div id="tags"> Clang, </div>
+
+<script>
+//Change the DOM to implement a text box where we can make changed. 
+//Changes are saved from a different button that appears that posts the data.
+//Break this up when we move to typescript.
+function Modify() {
+   //Save previous data on the client side:
+   let content = document.getElementById("content");
+   let preContent = document.getElementById("content").innerHTML;
+   let buttons = document.getElementById("buttons");
+   content.innerHTML = `<textarea class="form-control"
+                                          id="modifyContent"
+                                          name="Article.Content"
+                                          rows="10"
+                                          cols="70"></textarea>`;
+   document.getElementById("modifyContent").value += preContent; 
+   buttons.innerHTML = `<button class="btn btn-primary"> Submit </button>
+   <button class="btn btn-danger" onclick="Cancel()"> Cancel </button>`
+}
+</script>
