@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Remove="Pages\NewArticles.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\ModifyArticle.ts" />
   </ItemGroup>
 
 
