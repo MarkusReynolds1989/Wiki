@@ -11,23 +11,22 @@ namespace InternalWiki.Data
     //This class builds a new article.
     public class ArticleBuilder : ICreateArticle
     {
-        public IHtmlContent CreateArticle(Article article)
+        public string CreateArticle(Article article)
         {
-            var articleHTML = new HtmlContentBuilder();
+            var articleHtml = new StringBuilder();
             var tagBuilder = new StringBuilder();
             foreach (var item in article.Tags)
             {
                 tagBuilder.Append(item + ",");
             }
 
-            articleHTML.Append("@page");
-            articleHTML.Append($"@model InternalWiki.Pages.{article.Title}Model");
-            articleHTML.Append($"div id = '{article.Title}'");
-            articleHTML.Append($"<h1> {article.Title} </h1>");
-            articleHTML.Append("</div>");
+            articleHtml.Append("@page");
+            articleHtml.Append($"\n@model InternalWiki.Pages.{article.Title}Model");
+            articleHtml.Append($"\n<div id = \"{article.Title}\">");
+            articleHtml.Append($"\n<h1> {article.Title} </h1>");
+            articleHtml.Append("\n</div>");
             //Responsible for creating the article.
-            Debug.WriteLine(articleHTML);
-            return articleHTML;
+            return articleHtml.ToString();
         }
 
         public string CreateCodeBehind(Article article)
@@ -46,7 +45,7 @@ namespace InternalWiki.Data
             
             var articleContent = articleBuilder.CreateArticle(article);
             var articlePath = $"Pages/Articles/{article.Title}.cshtml";
-            var linkTitle = $" {article.Title} ";
+            var linkTitle = $"{article.Title} ";
             var linkPath = $"Pages/links.txt";
             
             //Write the new article to a local file.

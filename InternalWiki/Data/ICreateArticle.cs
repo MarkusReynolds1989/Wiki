@@ -5,7 +5,7 @@ namespace InternalWiki.Data
 {
     public interface ICreateArticle
     {
-        IHtmlContent CreateArticle(Article article);
+        string CreateArticle(Article article);
         string CreateCodeBehind(Article article);
         void SaveNewArticle(Article article);
     }
