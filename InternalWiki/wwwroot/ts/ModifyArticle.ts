@@ -14,7 +14,7 @@
         this.tagsID = tagID;
     }
 
-//Pushes all the content into input boxes for modification. On post should be called with updated strings.
+    //Pushes all the content into input boxes for modification. On post should be called with updated strings.
     public ModifyAll(): void {
         this.GetTitle(this.titleID);
         this.ModifyContent(this.contentID);
@@ -25,7 +25,7 @@
     GetTitle(titleID: string): void {
        let title: HTMLElement = document.getElementById(titleID);
        let preTitle: string = document.getElementById(titleID).innerText;
-       title.innerHTML = "<div name = \"Article.Title\"></div>";
+       title.innerHTML = "<input type=\"text\" name = \"Article.Title\"/>";
        title.innerText = preTitle;
     }
     

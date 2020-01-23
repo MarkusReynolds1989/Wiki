@@ -18,6 +18,10 @@
     <TypeScriptCompile Include="wwwroot\ts\ModifyArticle.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Articles" />
+  </ItemGroup>
+
 
 
 </Project>
