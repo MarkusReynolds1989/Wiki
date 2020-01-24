@@ -222,3 +222,4 @@ C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debu
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\RazorDeclaration\InternalWiki.dll
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Imports.razor.g.cs
 C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\Razor\Pages\NewArticle.cshtml.g.cs
+C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\InternalWiki\obj\Debug\netcoreapp3.1\Razor\Pages\Articles\Test.cshtml.g.cs
