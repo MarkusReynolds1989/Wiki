@@ -1,6 +1,6 @@
 ﻿namespace InternalWiki.Data
 {
-    public interface IDeleteArticle
+    public class BluePrint
     {
         
     }
