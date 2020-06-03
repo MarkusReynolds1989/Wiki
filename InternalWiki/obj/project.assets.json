@@ -6358,33 +6358,27 @@
   },
   "packageFolders": {
     "C:\\Users\\MR071411\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj",
+      "projectUniqueName": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki.csproj",
       "projectName": "InternalWiki",
-      "projectPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\InternalWiki.csproj",
+      "projectPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki.csproj",
       "packagesPath": "C:\\Users\\MR071411\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\InternalWiki\\obj\\",
+      "outputPath": "C:\\Users\\MR071411\\Desktop\\FunCode\\CSharp\\Wiki\\InternalWiki\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MR071411\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\MR071411\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\MR071411\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6426,6 +6420,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6434,7 +6434,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.1.20155.7\\RuntimeIdentifierGraph.json"
       }
     }
   }

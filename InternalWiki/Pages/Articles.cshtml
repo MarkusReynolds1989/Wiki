@@ -1,19 +1,24 @@
 @page
-@model ArticlesModel
+@using InternalWiki.Data
+
 @{
     ViewData["Title"] = "Articles";
 }
 
+
 <div class="text-center">
     <h1>Articles: </h1>
     <ul class="list-group">
-        @foreach (var item in ArticlesModel.linkList)
-            //Iterates through the list and makes links
-        {
-            <li class="list-group-item">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Articles/@item">@item.ToUpper()</a>
-            </li>
+        @{
+            foreach (var item in BluePrint.ArticleList)
+                //Iterates through the list and makes links.
+            {
+                <li class="list-group-item">
+                    <a class="nav-link text-dark" 
+                       asp-page="\Article"
+                       asp-route-id="@item.Key">@item.Value</a>
+                </li>
+            }
         }
     </ul>
 </div>
-

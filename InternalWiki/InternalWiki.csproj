@@ -19,7 +19,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Articles" />
+    <Content Update="Pages\Article.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\NewArticle.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Article.cshtml.cs">
+      <DependentUpon>Articles - Copy.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 

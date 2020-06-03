@@ -1,0 +1,64 @@
+﻿@page
+@model InternalWiki.Pages.NewArticle
+
+@{
+    ViewData["Title"] = "NewArticle";
+}
+
+<div class="text-center">
+    <h1>New Article</h1>
+    <form method="post" class="form-group text-left">
+        <br/>
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group" role="group">
+                <button type="button"
+                        class="btn btn-outline-dark"
+                        name="bold"
+                        onclick="insertHTMLCode('b')">
+                    <b> B </b>
+                </button>
+                <button type="button"
+                        class="btn btn-outline-dark"
+                        name="italic"
+                        onclick="insertHTMLCode('i')">
+                    <i> I </i>
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    name="code"
+                    onclick="insertHTMLCode('c')">
+                    Code
+                </button>
+            </div>
+        </div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name = "Title" class="form-control"/>
+        <label for="tags">Tags:</label>
+        <input type="text" id="tags" class="form-control"/>
+        <label for="content">Content:</label>
+        <textarea class="form-control"
+                  id="content"
+                  name = "Content"
+                  rows="10"
+                  cols="70"></textarea>
+        <br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script>
+    function insertHTMLCode(input) {
+        let content = document.getElementById("content");
+        switch(input) {
+            case 'i':
+                content.value += "<i></i>";
+                break;
+            case 'b':
+                content.value += "<b></b>";
+                break;
+            case 'c':
+                content.value += "\n<pre>\n<code>\n Insert snippet here\n</code>\n</pre>\n";
+                break;
+                }
+        }
+</script>
