@@ -1,7 +1,26 @@
 @page
 @model ArticleModel
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>@ViewData["title"]</title>
+</head>
 
+<body>
+<div hidden="true">
+    @ViewData["id"]
+</div>
 
-@Html.Raw(ViewData["content"])
+<article>
+    <h1 class="text-center">@Html.Raw(ViewData["title"])</h1>
+    <br/>
+    @Html.Raw(ViewData["content"])
+</article>
+<a class="nav-link text-dark btn btn-primary"
+   asp-page="\Modify"
+   asp-route-id="@ViewData["id"]">
+    Modify
+</a>
 
-@*TODO: Add in the modify button, this will take all of the raw HTML and put it into a text box for editing. *@
+</body>
+</html>

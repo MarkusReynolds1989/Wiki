@@ -8,9 +8,8 @@ namespace InternalWiki.Data
 {
     public static class BluePrint
     {
-        public static Dictionary<int, string> ArticleList = new Dictionary<int, string>();
-        //TODO: Method to write text file.
-        
+        public static readonly Dictionary<int, string> ArticleList = new Dictionary<int, string>();
+
         //Run on start up to get a dictionary of all the articles we already have and give them an ID.
         public static void FillArticleList()
         {
@@ -21,25 +20,38 @@ namespace InternalWiki.Data
                 ArticleList.Add(count++, item);
             }
         }
-        
+
         //Add a new key (the last key of the list + 1) and a path.
-        private static void AddToArticleList(int id ,string path)
+        private static void AddToArticleList(int id, string path)
         {
-            ArticleList.Add(id,path);
+            ArticleList.Add(id, path);
         }
 
-        public static bool WriteArticle(string content,string title)
+        //Increment the article count variable and add the new article to the folder.
+        public static bool WriteArticle(string content, string title)
         {
-            var path = @"C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\Pages\Articles\";
+            var path =
+                @$"C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\Pages\Articles\{title}.html";
             var articleId = ArticleList.Keys.Last() + 1;
-            AddToArticleList(articleId, path + title);
-            File.WriteAllText(path + title + ".txt", content);
-            return true;
+            var addTitle = $"{title} \n {content}";
+            AddToArticleList(articleId, path);
+            File.WriteAllText(path, addTitle);
+            return File.Exists(path);
         }
 
-        //TODO: Method to read a file.
+        //Don't mess with the dictionary, just rewrite the already existing file.
+        public static bool ModifyArticle(string content, string title)
+        {
+            var path =
+                @$"C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\Pages\Articles\{title}.html";
+            // Guard against writing files that don't exist.
+            var addTitle = $"{title} \n {content}";
+            File.WriteAllText(path, addTitle);
+
+            return File.Exists(path);
+        }
+
         //Reads the file into raw html that the page can consume.
-        //Doesn't currently separate the title/content ext.
         public static string ReadArticle(int id)
         {
             var article = ArticleList[id];

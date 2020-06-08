@@ -14,9 +14,16 @@
                 //Iterates through the list and makes links.
             {
                 <li class="list-group-item">
-                    <a class="nav-link text-dark" 
+                    <a class="nav-link text-dark"
                        asp-page="\Article"
-                       asp-route-id="@item.Key">@item.Value</a>
+                       asp-route-id="@item.Key">
+                        @{
+                            var startPosition = item.Value.LastIndexOf(@"\", StringComparison.Ordinal);
+                            var endPosition = item.Value.LastIndexOf(".", StringComparison.Ordinal); 
+                        }
+                        @* TODO: Fix magic numbers. *@
+                        @item.Value.Substring(startPosition + 1,endPosition - startPosition - 1)
+                    </a>
                 </li>
             }
         }

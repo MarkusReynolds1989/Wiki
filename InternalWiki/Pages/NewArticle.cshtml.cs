@@ -9,7 +9,15 @@ namespace InternalWiki.Pages
         {
             var title = Request.Form["Title"];
             var content = Request.Form["Content"];
-            BluePrint.WriteArticle(content, title);
+            if (BluePrint.WriteArticle(content, title))
+            {
+                ViewData["postSuccess"] = "Post success!";
+            }
+            else
+            {
+                ViewData["postSuccess"] = "Post failed!";
+            }
+            
         }
     }
 }
