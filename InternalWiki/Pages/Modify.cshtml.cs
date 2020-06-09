@@ -1,34 +1,37 @@
-﻿using System;
-using InternalWiki.Data;
+﻿using InternalWiki.Data;
+using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace InternalWiki.Pages
 {
     public class Modify : PageModel
     {
+        [BindProperty] private Article Article { get; set; }
+
         public void OnGet(int id)
         {
-            var raw = BluePrint.ReadArticle(id);
-            var position = raw.IndexOf("\r\n", StringComparison.Ordinal);
-            var title = raw.Substring(0, position);
-            var content = raw.Remove(0, position);
+            Article = ArticleController.ReadArticle(id);
+
             //Sets the content for the page based upon the id provided.
-            ViewData["content"] = content;
-            ViewData["title"] = title;
-            ViewData["id"] = id;
+            ViewData["content"] = Article.Content;
+            ViewData["title"] = Article.Title;
+            ViewData["id"] = Article.Tags;
         }
 
         public void OnPost()
         {
             var title = Request.Form["title"];
             var content = Request.Form["content"];
-            if (BluePrint.ModifyArticle(content, title))
+            var tags = Request.Form["tags"];
+
+            if (ArticleController.ModifyArticle(new Article(title, content, tags)))
             {
-                ViewData["postSuccess"] = "Post success!";
+                ViewData["pSuccess"] = "Modify complete.";
             }
             else
             {
-                ViewData["postSuccess"] = "Post failed!";
+                ViewData["pSuccess"] = "Modify failed.";
             }
         }
     }

@@ -10,22 +10,23 @@
     <h1>Articles: </h1>
     <ul class="list-group">
         @{
-            foreach (var item in BluePrint.ArticleList)
+            foreach (var article in ArticleController.ArticleList)
                 //Iterates through the list and makes links.
             {
                 <li class="list-group-item">
                     <a class="nav-link text-dark"
                        asp-page="\Article"
-                       asp-route-id="@item.Key">
-                        @{
-                            var startPosition = item.Value.LastIndexOf(@"\", StringComparison.Ordinal);
-                            var endPosition = item.Value.LastIndexOf(".", StringComparison.Ordinal); 
-                        }
+                       asp-route-id="@article.Key"
+                       asp-route-title="@article.Value.Title">
                         @* TODO: Fix magic numbers. *@
-                        @item.Value.Substring(startPosition + 1,endPosition - startPosition - 1)
+                        @article.Value.Title
                     </a>
                 </li>
             }
         }
     </ul>
 </div>
+
+@{
+    
+}

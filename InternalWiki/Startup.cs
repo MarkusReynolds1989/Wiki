@@ -17,7 +17,7 @@ namespace InternalWiki
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            BluePrint.FillArticleList();
+            ArticleController.FillArticleList();
         }
 
         public IConfiguration Configuration { get; }

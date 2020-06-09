@@ -15,10 +15,13 @@
     <h1 class="text-center">@Html.Raw(ViewData["title"])</h1>
     <br/>
     @Html.Raw(ViewData["content"])
+    <br/>
+    @Html.Raw(ViewData["tags"])
 </article>
 <a class="nav-link text-dark btn btn-primary"
    asp-page="\Modify"
-   asp-route-id="@ViewData["id"]">
+   asp-route-id="@ViewData["id"]"
+   asp-route-title="@ViewData["title"]">
     Modify
 </a>
 
