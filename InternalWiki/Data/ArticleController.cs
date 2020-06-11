@@ -16,55 +16,50 @@ namespace InternalWiki.Data
     {
         public static readonly Dictionary<int, Article> ArticleList = new Dictionary<int, Article>();
 
-        private const string ArticlePath =
-            //@"C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\Pages\Articles";
-            "/home/markus/Code/C#/Wiki/InternalWiki/Pages/Articles";
-
         private const string ArticleJsonPath =
-            //@"C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\Pages\Articles\articles.json";
-            "/home/markus/Code/C#/Wiki/InternalWiki/Pages/Articles/articles.json";
-        
-        public static void ReadJsonArticles()
-        {
-            var json = File.ReadAllText(ArticleJsonPath);
-            var article = JsonConvert.DeserializeObject<Article>(json);
-            AddToArticleList(IncArticleId(),article);
-        }
+            @"C:\Users\MR071411\Desktop\FunCode\CSharp\Wiki\InternalWiki\Pages\Articles\articles.json";
+        //"/home/markus/Code/C#/Wiki/InternalWiki/Pages/Articles/articles.json";
 
-        public static void WriteJsonArticle(Article article)
-        {
-            var serialized = JsonSerializer.Serialize(article);
-            File.AppendAllText(ArticleJsonPath,serialized);
-        }
-        
+        // Add a single article to the list.
         private static void AddToArticleList(int id, Article article) =>
             ArticleList.Add(id, article);
-
 
         // Increment the articleID.
         private static int IncArticleId() =>
             ArticleList.Keys.Last() + 1;
 
-        public static void FillArticleList()
+        // Read data from Json into string.
+        public static string ReadJsonArticles() =>
+            File.ReadAllText(ArticleJsonPath);
+
+        // Deserialize objects from Json into a list and process into dictionary.
+        public static void DeserializeArticles(string data)
         {
-            var count = 0;
-            var json = File.ReadAllText(ArticleJsonPath);
-            var article = JsonConvert.DeserializeObject<Article>(json);
-            ArticleList.Add(count, article);
+            var articles = JsonConvert.DeserializeObject<List<Article>>(data);
+            if (articles != null && articles.Count > 0)
+            {
+                var count = 0;
+                foreach (var article in articles)
+                {
+                    AddToArticleList(count++, article);
+                }
+            }
         }
 
-        // Same as writing except don't add it to the list.
-        /*public static bool ModifyArticle(Article article)
-        {
-            File.WriteAllText(article.Path, article.FormatArticle());
-            return File.Exists(article.Path);
-        }*/
+        // Serialize articles in dictionary to a string for writing.
+        private static string SerializeArticles(Dictionary<int, Article>.ValueCollection articles) =>
+            JsonConvert.SerializeObject(articles, Formatting.Indented);
 
-        // Update the file when it's called, there may have been changes from the original read.
-        /*public static Article ReadArticle(int id)
+        // Serialize and Write article into article.json.
+        public static void WriteJsonArticles(Article article)
         {
-            var article = ArticleList[id];
-            return new Article(File.ReadAllLines(article.Path).ToList());
-        }*/
+            // Add the new article to the dictionary first that way we can write it to the json list.
+            AddToArticleList(ArticleList.Count <= 0 ? 0 : IncArticleId(), article);
+
+            File.WriteAllText(ArticleJsonPath, SerializeArticles(ArticleList.Values));
+        }
+
+        public static void UpdateJson() =>
+            File.WriteAllText(ArticleJsonPath, SerializeArticles(ArticleList.Values));
     }
 }

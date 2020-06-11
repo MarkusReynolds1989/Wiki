@@ -12,8 +12,9 @@ namespace InternalWiki.Pages
         public void OnGet(int id)
         {
             var article = ArticleController.ArticleList[id];
+            ViewData["id"] = id;
             ViewData["title"] = article.Title;
-            ViewData["content"] = article.FormatContent();
+            ViewData["content"] = article.Content;
             ViewData["tags"] = article.Tags;
         }
     }

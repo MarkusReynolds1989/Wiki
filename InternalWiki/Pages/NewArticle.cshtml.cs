@@ -10,21 +10,12 @@ namespace InternalWiki.Pages
         public void OnPost()
         {
             var title = Request.Form["Title"];
-            var content = Request.Form["Content"]; 
+            var content = Request.Form["Content"];
             var tags = Request.Form["Tags"];
             var pubTime = DateTime.Now;
-            var article = new Article(title,content,tags,pubTime,DateTime.Now);
-            ArticleController.WriteJsonArticle(article);
-            /*  
-            if (ArticleController.WriteArticle(title,content,tags))
-            {
-                ViewData["postSuccess"] = "Post success!";
-            }
-            else
-            {
-                ViewData["postSuccess"] = "Post failed!";
-            }
-           */ 
+            var article = new Article(title, content, tags, pubTime, DateTime.Now);
+            
+            ArticleController.WriteJsonArticles(article);
         }
     }
 }

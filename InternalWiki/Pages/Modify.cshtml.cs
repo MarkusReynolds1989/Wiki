@@ -1,4 +1,6 @@
-﻿using InternalWiki.Data;
+﻿using System;
+using System.Diagnostics;
+using InternalWiki.Data;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -7,32 +9,29 @@ namespace InternalWiki.Pages
 {
     public class Modify : PageModel
     {
-        [BindProperty] private Article Article { get; set; }
-
         public void OnGet(int id)
         {
-            //Article = ArticleController.ReadArticle(id);
-
             //Sets the content for the page based upon the id provided.
-            ViewData["content"] = Article.Content;
-            ViewData["title"] = Article.Title;
-            ViewData["id"] = Article.Tags;
+            var article = ArticleController.ArticleList[id];
+            ViewData["id"] = id;
+            ViewData["content"] = article.Content;
+            ViewData["title"] = article.Title;
+            ViewData["tags"] = article.Tags;
         }
 
         public void OnPost()
         {
-            var title = Request.Form["title"];
-            var content = Request.Form["content"];
-            var tags = Request.Form["tags"];
-
-            /*if (ArticleController.ModifyArticle(new Article(title, content, tags)))
-            {
-                ViewData["pSuccess"] = "Modify complete.";
-            }
-            else
-            {
-                ViewData["pSuccess"] = "Modify failed.";
-            }*/
+            var id = int.Parse(Request.Form["Id"]);
+            var pubTime = ArticleController.ArticleList[id].PublishTime;
+            var title = Request.Form["Title"];
+            var content = Request.Form["Content"];
+            var tags = Request.Form["Tags"];
+            Debug.WriteLine(title);
+            var article = new Article(title, content, tags, pubTime, DateTime.Now);
+            // Replace the old article in the dictionary.
+            ArticleController.ArticleList[id] = article;
+            // Rewrite the list to the json file.
+            ArticleController.UpdateJson();
         }
     }
 }

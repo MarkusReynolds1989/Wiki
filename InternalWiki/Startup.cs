@@ -17,7 +17,8 @@ namespace InternalWiki
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            ArticleController.FillArticleList();
+            // Read all the current articles to a dictionary.
+            ArticleController.DeserializeArticles(ArticleController.ReadJsonArticles());
         }
 
         public IConfiguration Configuration { get; }
