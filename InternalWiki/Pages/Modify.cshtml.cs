@@ -11,7 +11,7 @@ namespace InternalWiki.Pages
 
         public void OnGet(int id)
         {
-            Article = ArticleController.ReadArticle(id);
+            //Article = ArticleController.ReadArticle(id);
 
             //Sets the content for the page based upon the id provided.
             ViewData["content"] = Article.Content;
@@ -25,14 +25,14 @@ namespace InternalWiki.Pages
             var content = Request.Form["content"];
             var tags = Request.Form["tags"];
 
-            if (ArticleController.ModifyArticle(new Article(title, content, tags)))
+            /*if (ArticleController.ModifyArticle(new Article(title, content, tags)))
             {
                 ViewData["pSuccess"] = "Modify complete.";
             }
             else
             {
                 ViewData["pSuccess"] = "Modify failed.";
-            }
+            }*/
         }
     }
 }

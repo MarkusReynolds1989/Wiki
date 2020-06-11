@@ -10,16 +10,15 @@
     <h1>Articles: </h1>
     <ul class="list-group">
         @{
-            foreach (var article in ArticleController.ArticleList)
+            foreach (var item in ArticleController.ArticleList)
                 //Iterates through the list and makes links.
             {
                 <li class="list-group-item">
                     <a class="nav-link text-dark"
                        asp-page="\Article"
-                       asp-route-id="@article.Key"
-                       asp-route-title="@article.Value.Title">
+                       asp-route-id=@item.Key>
                         @* TODO: Fix magic numbers. *@
-                        @article.Value.Title
+                        @item.Value.Title
                     </a>
                 </li>
             }
@@ -28,5 +27,5 @@
 </div>
 
 @{
-    
+
 }
