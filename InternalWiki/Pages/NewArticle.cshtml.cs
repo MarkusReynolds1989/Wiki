@@ -11,6 +11,8 @@ namespace InternalWiki.Pages
             var title = Request.Form["Title"];
             var content = Request.Form["Content"]; 
             var tags = Request.Form["Tags"];
+            var article = new Article(title,content,tags);
+            ArticleController.WriteJsonArticle(article);
             
             if (ArticleController.WriteArticle(title,content,tags))
             {
